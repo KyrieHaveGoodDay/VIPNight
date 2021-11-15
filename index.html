@@ -1,0 +1,1723 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="" id="base">
+    <script>
+        var isOnline = location.host.indexOf('pchome'); // check online
+        var urlStlye = location.host.indexOf('www'); // check url style
+        var baseTag = document.getElementById("base");
+        var loadURL; // use for jQ load & pages-link
+        var sites; // now sites
+        if (isOnline == -1) {
+            console.log('local');
+            loadURL = "";
+            baseTag.href = "";
+        } else {
+            console.log('online')
+            sitesIndex = location.pathname.split('/');
+            sites = sitesIndex[sitesIndex.indexOf('sites') + 1];
+            baseTag.href = '//a.ecimg.tw/img/sites/' + sites + '/';
+            if (isOnline && (urlStlye !== -1)) {
+                console.log('url1')
+                loadURL = 'https://www.pchomeec.tw/cdn/sites/' + sites + '/';
+            } else if (isOnline && (urlStlye == -1)) {
+                console.log('url2')
+                loadURL = 'https://24h.pchome.com.tw/sign/brands/';
+                baseTag.href = '//a.ecimg.tw/img/sites/flagshipstores/';
+            }
+            console.log(baseTag.href);
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>品牌旗艦館 │ PChome 24h購物</title>
+    <meta name="title" content="品牌旗艦館 │ PChome 24h購物">
+    <meta name="keywords" content="品牌,PChome,24h購物,旗艦館">
+    <meta name="description"
+        content="網路家庭旗下PChome24h購物，攜手各大品牌公司，於PChome24h購物設立品牌旗艦館，PChome24h購物取得原廠授權的直營網購平台，且享有全台24小時、台北巿6小時到貨服務。">
+    <meta property="og:title" content="品牌旗艦館 │ PChome 24h購物">
+    <meta property="og:description"
+        content="網路家庭旗下PChome24h購物，攜手各大品牌公司，於PChome24h購物設立品牌旗艦館，PChome24h購物取得原廠授權的直營網購平台，且享有全台24小時、台北巿6小時到貨服務。">
+    <meta property="og:image" content="https://a.ecimg.tw/css/2016/style/images/v201607/sitelogo/h24.png">
+    <meta property="og:site_name" content="品牌旗艦館 │ PChome 24h購物">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.pchomeec.tw/sites/koreaginsengcorp">
+    <link rel="apple-touch-icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-64x64.ico" sizes="64x64" />
+    <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-64x64.ico" sizes="64x64" />
+    <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-32x32.ico" sizes="32x32" />
+    <link rel="icon" type="image/x-icon" href="https://e.ecimg.tw/img/icon/24-16x16.ico" sizes="16x16" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no, user-scalable=0">
+    <!--CSS-->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+    <link type="text/css" rel="stylesheet" href="css/aos.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.4.2.1.min.css">
+    <link type="text/css" rel="stylesheet" href="css/swiper.min.css">
+    <link type="text/css" rel="stylesheet" href="css/layout1108.css">
+    <!-- Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'site': '24h' });
+        window.dataLayer && window.dataLayer.push({ 'event': 'custom.event.pageview' });
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TKSM5PF');</script>
+    <!-- End Google Tag Manager -->
+    <style>
+        .TextRed {
+            color: #f00;
+        }
+
+        /* 7/26 add */
+        .borderImg-1 {
+            margin-top: 0.5rem !important;
+        }
+
+        .loading-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #222;
+            z-index: 100;
+        }
+
+        .loading {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 50;
+        }
+
+        @media (max-width: 414px) {
+            .loading {
+                top: 60%;
+                left: 51%;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="loading-wrapper">
+        <div class="loading la-ball-pulse-rise">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKSM5PF" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <div class="header" id="top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <div class="logo"><a href="https://24h.pchome.com.tw/"><img src="img/24hLOGO.png"></a></div>
+                <ul class="d-flex pchome_web">
+                    <li><a target="_blank" href="https://shopping.pchome.com.tw/">線上購物</a></li>
+                    <li><a target="_blank" href="https://24h.pchome.com.tw/">24h購物</a></li>
+                    <li><a target="_blank" href="https://24h.pchome.com.tw/books/">書店</a></li>
+                    <li><a target="_blank" href="https://www.pchomeec.tw/sites/overseasgoods">比比昂代購</a></li>
+                    <li><a target="_blank" href="https://pchometravel.com/">旅遊</a></li>
+                </ul>
+            </div>
+            <ul class="d-flex pchome_member">
+                <li><a target="_blank" href="https://ecssl.pchome.com.tw/sys/cflow/index/BigCar/BIGCAR/ItemList">購物車</a>
+                </li>
+                <li><a target="_blank"
+                        href="https://www.pchomeprime.com.tw/activity/cobrand/citi/apply.htm">PChome聯名卡</a></li>
+                <li><a target="_blank" href="https://ecvip.pchome.com.tw/web/coupon">折價券</a></li>
+                <li><a target="_blank" href="https://ecvip.pchome.com.tw/web/savings/deposit/list">儲值</a></li>
+                <li><a target="_blank" href="https://ecvip.pchome.com.tw/web/PPoint/list">P幣</a></li>
+                <li><a target="_blank" href="https://ecvip.pchome.com.tw/web/ShoppingBenefit/CashPoint/Main">現金積點</a>
+                </li>
+                <li><a target="_blank" href="https://ecvip.pchome.com.tw/">顧客中心</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- END // Header -->
+
+    <!-- 左側選單 (手機置底) -->
+    <div class="left_menu d-flex align-items-start flex-column">
+        <div class="arrow_box"><span class="arrow arLeft"></span></div>
+        <ul class="menu_box radius_M ">
+            <li class="banner"><a href="https://shopping.pchome.com.tw/V1111P/main"><img src="img/250x250.png"> </a>
+            </li>
+            <li class="subtitle">
+                <dt>特色分會場</dt>
+            </li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/3c">3C王者</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/CE">榮耀家電</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/digi">酷玩聖殿</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/life">優享生活</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/daily">質感日用</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/outdoor">熱血行家</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/fashion">玩美領航</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/food">美味饗宴</a></li>
+            <li><a href="https://24h.pchome.app/pchome24h/588">超Pro五倍</a></li>
+            <li><a href="https://shopping.pchome.com.tw/V1111P/eticket">電子票券</a></li>
+            <li><a href="https://www.pchomeec.tw/sites/pchomex">家好選物</a></li>
+            <li class="act_03">
+                <a href="https://samsung.pchomeec.tw/cdn/sites/samsung" target="_blank">三星旗艦</a>
+            </li>
+            <li class="act_01">
+                <a href="https://apple.pchomeec.tw/cdn/sites/apple" target="_blank">Apple旗艦</a>
+            </li>
+            <li class="act_02">
+                <a href="https://mi.pchomeec.tw/cdn/sites/mi" target="_blank">小米旗艦</a>
+            </li>
+            <li class="act_03">
+                <a href="https://shopping.pchome.com.tw/V1111P/app" target="_blank">APP獨享</a>
+            </li>
+        </ul>
+        <!-- 手機置底主選單 -->
+        <ul class="main_menu">
+            <li>
+                <a href="https://shopping.pchome.com.tw/19/main"><img src="img/sidebar_icon1.png">主會場</a>
+            </li>
+            <li class="subevent">
+                <a href="javascript:;"><img src="img/sidebar_icon2.png">分會場</a>
+            </li>
+        </ul>
+    </div>
+    <!-- END // 左側選單 -->
+
+    <!-- 右側選單 (手機置頂) -->
+    <!-- <div class="right_menu d-flex align-items-end flex-column">
+        <div class="arrow_box"><span class="arrow arRight"></span></div>
+        <ul class="menu_box radius_M">
+            <li><a href="#section_01">幫寶適xBRITA</a></li>
+            <li><a href="#section_02">LG</a></li>
+            <li><a href="#section_03">Herman Miller</a></li>
+            <li><a href="#section_04">IRIS OHYAMA</a></li>
+            <li><a href="#section_05">理膚寶水</a></li>
+            <li><a href="#section_06">飛利浦照明</a></li>
+            <li><a href="#section_07">77巧克力</a></li>
+            <li><a href="#section_08">Razer</a></li>
+            <li><a href="#section_09">維他露</a></li>
+            <li><a href="#section_10">捷安特</a></li>
+            <li class="gotopPC"><a href="#top"><span class="arrow arUp"></span>TOP</a></li>
+            <ul class="menu_box radius_M ">
+                <li class="banner"><a href="https://24h.pchome.app/pchome24h/md-event-426"><img src="img/110x110_md.jpg"> </a></li>
+            </ul>
+    </div>
+
+    <div class="right_box">
+        <div class="gotop">
+            <a href="#top" class="pc"><img src="img/top.svg"></a>
+            <a href="#wrap" class="mb"><img src="img/top.svg"></a>
+        </div>
+    </div> -->
+    <!-- END // 右側選單 -->
+    <!-- <div class="sticker">
+        <a href="https://24h.pchome.com.tw/" target="_blank"><img src="img/gallery/game_boxman.gif" class="d-block"></a>
+    </div> -->
+
+    <!-- 品牌 -->
+    <div class="container d-flex align-items-center justify-content-between" id="site-logo">
+        <div class="d-flex align-items-center logo_box">
+            <!-- <div class="logo"><img src="img/logo_150x43.png"></div> -->
+            <h4>品牌旗艦館</h4>
+        </div>
+
+        <!-- 小AD-->
+        <div class="slider_box">
+            <a href="https://24h.pchome.app/pchome24h/585"><img src="img/gallery/demo_b02.png" class="d-none"></a>
+        </div>
+        <!--END // 小AD -->
+    </div>
+    <!-- END // 品牌 -->
+
+    <!-- 選單 -->
+    <div class=" navbox">
+        <nav>
+            <div class="nav_wrap">
+                <ul class="main_menu">
+                    <li>
+                        <a href="javascript:void(0)">品牌週活動 <span class="aw_icon"></span></a>
+                        <ul class="dropdown sub">
+                            <li><a href="https://www.pchomeec.tw/activity/AC94475095" target="_blank">ASUS最高回饋35%</a>
+                            </li>
+                            <li><a href="https://dyson.pchomeec.tw/sites/dyson" target="_blank">Dyson 48折起 </a>
+                            </li>
+                            <li><a href="https://www.pchomeec.tw/sites/acer">Acer 最高回饋29%</a> </li>
+                            <li><a href="https://www.pchomeec.tw/activity/AC73895265" target="_blank">realme 5折起</a>
+                            </li>
+                            <li><a href="https://logitech.pchomeec.tw/sites/logitech" target="_blank">羅技 55折起 </a> </li>
+                            <li><a href="https://shopping.pchome.com.tw/activity/campaign/C831135485"
+                                    target="_blank">P&G 狂降4折起</a>
+                            </li>
+                            <li><a href="https://shopping.pchome.com.tw/activity/campaign/C530409425"
+                                    target="_blank">全館球鞋均一價$1111</a>
+                            </li>
+                            <li><a href="https://shopping.pchome.com.tw/activity/campaign/C917276556"
+                                    target="_blank">嬌聯最高回饋31%</a> </li>
+                            <li><a href="https://shopping.pchome.com.tw/activity/campaign/C926885631"
+                                    target="_blank">日立最高享8666P</a> </li>
+                            <li><a href="https://24h.pchome.com.tw/store/DEAY0N" target="_blank">Brita 最低5折起</a> </li>
+
+                    </li>
+                </ul>
+                </li>
+                <li class="dp">
+                    <a href="javascript:void(0)">手機筆電與周邊 <span class="aw_icon"></span></a>
+                    <ul class="dropdown sub_dp">
+                        <div class="row">
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>手機</dd>
+                                    <li><a href="https://android.pchomeec.tw/cdn/sites/android"
+                                            target="_blank">Android</a></li>
+                                    <li><a href="https://apple.pchomeec.tw/cdn/sites/apple" target="_blank">Apple</a>
+                                    </li>
+                                    <li><a href="https://samsung.pchomeec.tw/sites/samsung" target="_blank">Samsung</a>
+                                    </li>
+                                    <li><a href="https://mi.pchomeec.tw/cdn/sites/mi" target="_blank">小米</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAD" target="_blank">SONY</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGCC" target="_blank">ASUS</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGBM" target="_blank">HTC</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAE" target="_blank">LG</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAV" target="_blank">OPPO</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAA" target="_blank">realme</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAK" target="_blank">華為</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DYAB" target="_blank">Nokia</a>
+                                    </li>
+                                    <li><a href="https://poco.pchomeec.tw/cdn/sites/poco" target="_blank">POCO</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>筆電</dd>
+                                    <li><a href="https://www.pchomeec.tw/sites/surface" target="_blank">微軟</a></li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/acer" target="_blank">ACER</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAF" target="_blank">ASUS</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAG" target="_blank">HP</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHBF" target="_blank">Lenovo</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAI" target="_blank">DELL</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAS" target="_blank">ROG</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAK" target="_blank">MSI</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAJ" target="_blank">OMEN</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHBA" target="_blank">LEGION</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAC" target="_blank">RAZER</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DHAV" target="_blank">GIGABYTE</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>周邊</dd>
+                                    <li><a href="https://logitech.pchomeec.tw/sites/logitech" target="_blank">羅技</a>
+                                    </li>
+                                    <li><a href="https://shopping.pchome.com.tw/activity/campaign/C308572409"
+                                            target="_blank">羅技G</a> </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/tplink" target="_blank">TP-Link</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/office" target="_blank">微軟 軟體</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGCA" target="_blank">Sandisk </a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DRAM" target="_blank">Seagate</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGBN" target="_blank">Transcend</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                        </div>
+                    </ul>
+                </li>
+                <li class="dp">
+                    <a href="javascript:void(0)">數位娛樂家電 <span class="aw_icon"></span></a>
+                    <ul class="dropdown sub_dp">
+                        <div class="row">
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>數位</dd>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/xbox" target="_blank">Xbox</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/nintendo" target="_blank">任天堂</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/playstation"
+                                            target="_blank">PlayStation</a></li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/dji" target="_blank">DJI</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/gopro" target="_blank">Gopro</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGCL" target="_blank">Canon</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGCB" target="_blank">Nikon</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DGCP" target="_blank">Panasonic</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXAO" target="_blank">Garmin</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/google" target="_blank">Google</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>家電</dd>
+                                    <li><a href="https://dyson.pchomeec.tw/cdn/sites/dyson" target="_blank">Dyson</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/dysonhair" target="_blank">Dyson
+                                            Hair</a></li>
+                                    <li><a href="https://www.pchomeec.tw/sites/bosch" target="_blank">Bosch</a></li>
+                                    <li><a href="https://philips.pchomeec.tw/cdn/sites/philips" target="_blank">飛利浦</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/nespresso" target="_blank">Nespresso</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/lg" target="_blank">LG</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DMBH" target="_blank">伊萊克斯</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DMBC" target="_blank">雀巢</a></li>
+                                </dl>
+                            </ul>
+
+
+
+                        </div>
+                    </ul>
+
+                </li>
+                <li class="dp">
+                    <a href="javascript:void(0)">美妝時尚與運動 <span class="aw_icon"></span></a>
+                    <ul class="dropdown sub_dp">
+                        <div class="row">
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>美妝</dd>
+                                    <li><a href="https://www.pchomeec.tw/sites/larocheposay" target="_blank">理膚寶水</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/biotherm" target="_blank">碧兒泉</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/cdn/sites/laneige" target="_blank">蘭芝</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDBT" target="_blank">DHC</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDBF" target="_blank">施巴</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCR" target="_blank">提提研TTM</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCN" target="_blank">CeraVe</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCJ" target="_blank">薇姿Vichy</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCF" target="_blank">L’OCCITANE</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCM" target="_blank">KOSE</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DECC" target="_blank">慕之恬廊</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCU" target="_blank">雅漾</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCX" target="_blank">佳麗寶集團</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDDC" target="_blank">艾芙美A-DERMA</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDDB" target="_blank">蔻蘿蘭KLORANE</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCZ" target="_blank">巴黎萊雅媚比琳</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DDCE" target="_blank">資生堂集團</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>時尚</dd>
+                                    <li><a href="https://www.pchomeec.tw/sites/porter" target="_blank">PORTER</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/mitch" target="_blank">MiTCH</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDD" target="_blank">Timberland
+                                        </a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DICH" target="_blank">CASIO</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDT" target="_blank">SKECHERS</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DICW" target="_blank">TUMI</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDX" target="_blank">G2000</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIBZ" target="_blank">LA NEW</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDI" target="_blank">三花</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDF" target="_blank">曼黛瑪璉</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDO" target="_blank">蕾黛絲</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DICZ" target="_blank">EASY
+                                            SHOP</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIDH" target="_blank">ROXY</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DIEA" target="_blank">agnès b.</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>戶外運動</dd>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBT" target="_blank">adidas</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBW" target="_blank">ABC Mart</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/mizuno" target="_blank">美津濃</a></li>
+                                    <li><a href="https://www.pchomeec.tw/sites/gogoro" target="_blank">Gogoro</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXAO" target="_blank">Garmin</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBE" target="_blank">Asics</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBD" target="_blank">New
+                                            Balance</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBI" target="_blank">SHIMANO</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXAL" target="_blank">Columbia</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBC" target="_blank">歐都納</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBN" target="_blank">米其林</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DXBQ" target="_blank">車麗屋 </a>
+                                    </li>
+                                </dl>
+                            </ul>
+                        </div>
+                    </ul>
+                </li>
+                <li class="dp">
+                    <a href="javascript:void(0)">生活日用與食品 <span class="aw_icon"></span></a>
+                    <ul class="dropdown sub_dp">
+                        <div class="row">
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>生活</dd>
+                                    <li><a href="https://muji.pchomeec.tw/sites/muji" target="_blank">無印良品</a></li>
+                                    <li><a href="https://lego.pchomeec.tw/cdn/sites/lego" target="_blank">樂高</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/futurelab" target="_blank">未來實驗室</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEDE" target="_blank">特力屋</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEAY" target="_blank">BRITA</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEBS" target="_blank">康寧</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DECL" target="_blank">膳魔師</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DECP" target="_blank">WMF</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEAL" target="_blank">生活工場</a>
+                                    </li>
+                                    <li><a href="https://event.pchome.com.tw/2020/24hbooks10-2/"
+                                            target="_blank">故事專賣店</a> </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DECN" target="_blank">飛利浦照明</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEDI" target="_blank">韓國iloom</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DEDH" target="_blank">hoi好生活</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/activity/AC50254741" target="_blank">南紡購物中心</a>
+                                    </li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>日用</dd>
+                                    <li><a href="https://3m.pchomeec.tw/sites/3m" target="_blank">3M</a></li>
+                                    <li><a href="https://www.pchomeec.tw/sites/huggies" target="_blank">好奇</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DAAP" target="_blank">P&G</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DAAQ" target="_blank">舒潔</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DABJ" target="_blank">達麗</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DABK" target="_blank">春風</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DABL" target="_blank">倍潔雅</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DAAS" target="_blank">五月花</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DABB" target="_blank">聯合利華</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DABF" target="_blank">滿意寶寶</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DAAP" target="_blank">幫寶適</a></li>
+                                </dl>
+                            </ul>
+                            <ul class="col-lg-2 col-md-6 col-12">
+                                <dl>
+                                    <dd>食品</dd>
+                                    <li><a href="https://www.pchomeec.tw/sites/pchomex" target="_blank">PChomeX</a>
+                                    </li>
+                                    <li><a href="https://www.pchomeec.tw/sites/brands" target="_blank">白蘭氏</a></li>
+                                    <li><a href="https://www.pchomeec.tw/sites/koreaginsengcorp" target="_blank">正官庄</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBCQ" target="_blank">娘家</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBAZ" target="_blank">日落恩賜</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBBW" target="_blank">桂格</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBDE" target="_blank">達摩本草</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBBF" target="_blank">船井</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBDF" target="_blank">大研生醫</a>
+                                    </li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBDH" target="_blank">葡萄王</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBCM" target="_blank">三多</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBDI" target="_blank">科德司</a></li>
+                                    <li><a href="https://24h.pchome.com.tw/region/DBDN" target="_blank">善存</a></li>
+                                </dl>
+                            </ul>
+                        </div>
+                    </ul>
+                </li>
+
+
+
+
+
+            </div>
+            <div class="nav_mb d-flex align-items-center">
+                <div class="navbar-toggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="title_mb d-flex justify-content-center align-items-center">
+                    <h4>品牌旗艦館</h4>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- END //選單 -->
+    <!-- 空箱子 -->
+    <!-- <div class="box"></div> -->
+    <div class="wrap " id="wrap">
+        <div class="moveTop"></div>
+
+        <!-- <img class="lest_main" src="img/gallery/lest_main.png" alt=""> -->
+
+        <div class="bg_move3"></div>
+
+        <!-- 亮點 -->
+        <img class="light light1" src="img/gallery/light.png" alt="">
+        <img class="light light2" src="img/gallery/light.png" alt="">
+        <img class="light light3" src="img/gallery/light.png" alt="">
+        <img class="light light4" src="img/gallery/light.png" alt="">
+        <img class="light light5" src="img/gallery/light.png" alt="">
+        <img class="light light6" src="img/gallery/light.png" alt="">
+        <img class="light light7" src="img/gallery/light.png" alt="">
+        <img class="light light8" src="img/gallery/light.png" alt="">
+        <img class="light light9" src="img/gallery/light.png" alt="">
+        <img class="light light10" src="img/gallery/light.png" alt="">
+        <!-- 主視覺 -->
+        <div id="main_slider">
+
+            <div class="main_titleBg">
+                <img class="disc" src="img/gallery/chassis3.png" alt="">
+                <img class="disc_m" src="img/gallery/chassis3_mb.png" alt="">
+                <!-- <img src="img/gallery/bg_city.png" class="d-none d-lg-block" alt=""> -->
+                <!-- <img src="img/gallery/bg_city_m.png" class="d-block d-lg-none" alt=""> -->
+            </div>
+            <div class="container ">
+                <div class="row col-12 justify-content-center main_title">
+                    <img class="night_title1" src="img/gallery/night_title1.png" alt="">
+                    <img class="night_title1_m" src="img/gallery/night_title3_m.png" alt="">
+                    <img class="night_title3h" src="img/gallery/night_title3h.png" alt="">
+                    <img class="night_title3h_M" src="img/gallery/night_title3h_M.png" alt="">
+                    <!-- 倒數計時進入點 -->
+                    <div id="lastMinute">
+
+                        <span id="hour"></span>
+                        <span id="minute"></span>
+                        <span id="second"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END // 主視覺 -->
+
+        <!-- 版身 -->
+        <div class="container main_body">
+
+            <!-- 折價券 -->
+            <div class="row bn">
+                <div class="col-12 col-md-6 col-xl-6 disscount">
+                    <a href="https://shopping.pchome.com.tw/marketing/coupon/v2/couponsend.htm?id=61835254cdcdeman1"
+                        target="_blank">
+                        <img src="img/gallery/disscount1.png" alt="">
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6 disscount ">
+                    <a href="https://www.pchomeec.tw/activity/AC13010201" target="_blank">
+                        <img src="img/gallery/disscount2.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- END // 折價卷 -->
+
+            <!-- 明星商品 -->
+            <div class="section box1 box_mb" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true"
+                data-aos-anchor-placement="top-center">
+                <!-- 老人 -->
+                <img class="elder" src="img/gallery/elder.png" alt="">
+                <!-- 標題跟邊框 -->
+                <img class="start_bg" src="img/gallery/bg_star_title.png" alt="">
+                <div class="movie_title start_text "> 3H快閃價 限量搶購 </div>
+
+                <ul id="themeBTN_11" class="row start ">
+
+                    <!-- <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li>
+                    <li class="mb-4 col-6 col-md-6 col-lg-3 ">
+                        <a href="#" target="_blank">
+                            <img src="img/gallery/start_product.png" class="d-block">
+                        </a>
+                    </li> -->
+                </ul>
+                <!-- 邊邊角角 -->
+                <img class="leftTop start_leftTop" src="img/gallery/leftTop.png" alt="">
+                <img class="leftBottom start_leftBottom" src="img/gallery/leftBottom.png" alt="">
+                <img class="rightTop start_rightTop" src="img/gallery/rightTop.png" alt="">
+                <img class="rightbBottom start_rightBottom" src="img/gallery/rightbBottom.png" alt="">
+            </div>
+            <!-- END // 明星商品 -->
+
+
+
+            <!-- 區塊(1) -->
+            <!-- 真心五重禮 -->
+            <!-- 1013修改版本 -->
+            <div class="section box box1  " data-aos="fade-down" data-aos-duration="1000" data-aos-once="true"
+                data-aos-anchor-placement="top-center">
+                <div id="title" class="title"
+                    style="background-image: url('img/gallery/night_title2.png');text-align:center;">
+                    <span></span>
+                    VIP 推薦品
+                </div>
+
+                <div class="product_box">
+                    <!-- 大主打 -->
+                    <div class="row bn bigImg" id="section_01">
+                        <a href="https://24h.pchome.com.tw/store/DYALGF" target="_blank" class="col-12 col-md-6 mb-4 ">
+                            <img src="img/gallery/PD1.png">
+                        </a>
+                        <a href="https://24h.pchome.com.tw/prod/DEAWND-A900BNC0Y" target="_blank"
+                            class="col-12 col-md-6 mb-4">
+                            <img src="img/gallery/PD1-2.png">
+                        </a>
+                    </div>
+                    <!-- 小主打 -->
+                    <ul class="row promo" id="promo_01"></ul>
+                </div>
+
+
+                <!-- 阿姨 -->
+                <img class="aunt" src="img/gallery/aunt.png" alt="">
+                <!-- 邊邊角角 -->
+                <img class="product_leftTop" src="img/gallery/leftTop.png" alt="">
+                <img class="product_leftBottom" src="img/gallery/leftBottom.png" alt="">
+                <img class="product_rightTop" src="img/gallery/rightTop.png" alt="">
+                <img class="product_rightbBottom" src="img/gallery/rightbBottom.png" alt="">
+
+            </div>
+            <!-- END // 區塊(1) -->
+
+
+            <!--先領神卷 再參加盛宴-->
+            <div class="section discount_box position-relative" data-aos="fade-down" data-aos-duration="1000"
+                data-aos-once="true" data-aos-anchor-placement="top-center">
+
+                <!-- 左邊的人 -->
+                <img class="fake" src="img/gallery/fake.png" alt="">
+                <img class="discount_img" src="img/gallery/discount2.png" alt="">
+                <div class="title discount">
+
+                    先領神券 再參加盛宴
+                </div>
+                <div class="discount_main">
+                    <div class="discount_list">
+                        <ul class="row mt-3 mt-md-4 px-4" id="themeBTN_03"></ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END // 先領神卷 再參加盛宴 -->
+
+
+
+            <!-- 大牌送p幣 -->
+            <div class="section box1 featured " data-aos="fade-down" data-aos-duration="1000" data-aos-once="true"
+                data-aos-anchor-placement="top-center">
+
+                <img class="title_bg featured_title " src="img/gallery/big_title.png" alt="">
+                <div class="movie_title featured_text">大牌送P幣<br>Pi拍錢包綁Pi卡5%回饋無上限</div>
+
+                <ul class="row" id="themeBTN_04"></ul>
+
+                <!-- 小p幣 -->
+                <img class="pRight1" src="img/gallery/pRight.png" alt="">
+                <img class="pRight2" src="img/gallery/pRight.png" alt="">
+                <img class="pRight3" src="img/gallery/pRight1.png" alt="">
+                <img class="pLight1" src="img/gallery/pLeft.png" alt="">
+                <img class="pLeftGhost" src="img/gallery/pLeftGhost.png" alt="">
+                <img class="pLight2" src="img/gallery/pRight.png" alt="">
+                <img class="pLight3" src="img/gallery/pLeft1.png" alt="">
+                <!-- 邊邊角角 -->
+                <img class="product_leftTop" src="img/gallery/leftTop.png" alt="">
+                <img class="product_leftBottom" src="img/gallery/leftBottom.png" alt="">
+                <img class="product_rightTop" src="img/gallery/rightTop.png" alt="">
+                <img class="product_rightbBottom" src="img/gallery/rightbBottom.png" alt="">
+
+            </div>
+            <!-- END // 大牌送p幣 -->
+
+            <!-- 40大品牌 -->
+            <div id="fan_box" class="section box1 fan_box position-relative" data-aos="fade-down"
+                data-aos-duration="1000" data-aos-once="true" data-aos-anchor-placement="top-center">
+                <div class="title" style="background-image: url('img/gallery/night_title2.png');text-align:center;">
+                    <span></span>
+                    40大品牌 強檔上映
+                </div>
+
+                <div class="row poster">
+                    <div class="col-12 col-md-6">
+                        <a href="https://24h.pchome.app/pchome24h/PchomexSinyi-619">
+                            <img src="img/gallery/poster.png" alt="">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 posterTop">
+                        <a href="https://www.facebook.com/groups/498729124625585">
+                            <img src="img/gallery/poster2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3C王者 -->
+                <img class="week" src="img/gallery/week1.png" alt="">
+                <ul class="row noeHove" id="themeBTN_01"></ul>
+                <!-- 榮耀家電 -->
+                <img class="week" src="img/gallery/week2.png" alt="">
+                <ul class="row noeHove" id="themeBTN_05"></ul>
+                <!-- 酷玩聖殿 -->
+                <img class="week" src="img/gallery/week3.png" alt="">
+                <ul class="row noeHove" id="themeBTN_06"></ul>
+                <!-- 優質生活 -->
+                <img class="week" src="img/gallery/week4.png" alt="">
+                <ul class="row noeHove" id="themeBTN_07"></ul>
+                <!-- 質感日用 -->
+                <!-- <img class="week" src="img/gallery/week5.png" alt="">
+                <ul class="row " id="themeBTN_08"></ul> -->
+                <!-- 美味饗宴 -->
+                <img class="week" src="img/gallery/week6.png" alt="">
+                <ul class="row noeHove" id="themeBTN_09"></ul>
+                <!-- 完美領航 -->
+                <img class="week" src="img/gallery/week7.png" alt="">
+                <ul class="row noeHove" id="themeBTN_10"></ul>
+
+                <!-- 邊邊角角 -->
+                <img class="product_leftTop" src="img/gallery/leftTop.png" alt="">
+                <img class="product_leftBottom" src="img/gallery/leftBottom.png" alt="">
+                <img class="product_rightTop" src="img/gallery/rightTop.png" alt="">
+                <img class="product_rightbBottom" src="img/gallery/rightbBottom.png" alt="">
+            </div>
+            <!-- END // 40大品牌 -->
+
+
+            <!-- 優惠bar -->
+            <div class="section bar" data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
+
+                <div class="title bar_title"
+                    style="background-image: url('img/gallery/night_title2.png');text-align:center;">
+                    <span></span>
+                    優惠Bar
+                </div>
+                <!-- 服務生 -->
+                <img class="waiter" src="img/gallery/waiter.png" alt="">
+                <div class="bar_top">
+                    <img src="img/gallery/bar_top.png" alt="">
+                </div>
+
+                <div class="bar_mid">
+                    <!-- 左右兩邊的字 -->
+                    <img class="bar_left" src="img/gallery/bar_left.png" alt="">
+                    <img class="bar_right" src="img/gallery/bar_right.png" alt="">
+                    <img class="bar_right2" src="img/gallery/pchomeText.png" alt="">
+                    <div class="row bn bar_box">
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://pchome24h-v1111p-game.com/" target="_blank">
+                                <img src="img/gallery/bar1.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://24h.pchome.app/pchome24h/Taitungisland-645" target="_blank">
+                                <img src="img/gallery/bar2.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://www.pchomeec.tw/activity/AC05692501" target="_blank">
+                                <img src="img/gallery/bar3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://shopping.pchome.com.tw/V1111P/discount" target="_blank">
+                                <img src="img/gallery/bar4.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://shopping.pchome.com.tw/V1111P/app" target="_blank">
+                                <img src="img/gallery/bar5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://www.pchomeec.tw/activity/AC19765422#pcoin" target="_blank">
+                                <img src="img/gallery/bar6.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=pchome24h" target="_blank">
+                                <img src="img/gallery/bar7.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://event.pchome.com.tw/2021/onepchome/" target="_blank">
+                                <img src="img/gallery/bar8.gif" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://shopping.pchome.com.tw/V1111P/bank#cathay " target="_blank">
+                                <img src="img/gallery/bank_1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://shopping.pchome.com.tw/V1111P/bank?n=index_01.html" target="_blank">
+                                <img src="img/gallery/bank_2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://savemoney.pchomeec.tw/" target="_blank">
+                                <img src="img/gallery/bank3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-6 col-md-3  bar_card">
+                            <a href="https://www.pchomeec.tw/activity/AC61292777" target="_blank">
+                                <img src="img/gallery/bank4.png" alt="">
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="bar_bottom">
+                    <img src="img/gallery/bar_bottom.png" alt="">
+                </div>
+            </div>
+            <!-- END // 優惠bar -->
+
+
+        </div>
+        <!-- END // 版身 -->
+
+        <!-- 調間距 -->
+        <div class="lessonBot"></div>
+
+        <!-- Footer -->
+
+    </div>
+
+
+
+    <!-- 影片燈箱 -->
+    <div class="modal fade" id="video_box" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" id="video" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END // 影片燈箱 -->
+    <div class="footer">
+        <ul class="d-flex justify-content-center align-items-center mb-3">
+            <li class="text">追蹤我們</li>
+            <li><a href="https://www.facebook.com/pchome24h/" target="_blank"><img src="img/fb_new.svg"></a></li>
+            <li><a href="https://www.instagram.com/pchome24h/" target="_blank"><img src="img/ig_new.svg"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCb2aGEzl5Ki5juwPolnC-PA" target="_blank"><img
+                        src="img/youtube_new.svg"></a></li>
+            <li><a href="https://line.me/R/ti/p/@pchome24h" target="_blank"><img src="img/line_new.svg"></a></li>
+        </ul>
+        <p>本活動頁商品規格、顏色、價位、贈品如與銷售網頁不符，以銷售網頁標示為準！</p>
+        <p>網路家庭版權所有Copyright PChome Online版權所有，轉載必究</p>
+    </div>
+
+
+
+    <div class="menuMask"></div>
+    <!--JS-->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script>
+        // ----------------
+        // 版頭大輪播Banner
+        // ----------------
+        var slider = new Array();
+        slider = [
+            {
+                imgPC: "slide9.png",
+                imgMB: "slide_m9.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C080720117"
+            },
+            {
+                imgPC: "slide5.png",
+                imgMB: "slide_m5.png",
+                link: "https://www.pchomeec.tw/sites/porter"
+            },
+            {
+                imgPC: "slide6.png",
+                imgMB: "slide_m6.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C467629262"
+            },
+            {
+                imgPC: "slide7.png",
+                imgMB: "slide_m7.png",
+                link: "https://www.pchomeec.tw/cdn/sites/iloom"
+            },
+            {
+                imgPC: "slide8.png",
+                imgMB: "slide_m8.png",
+                link: "https://24h.pchome.com.tw/region/DDCX"
+            },
+            {
+                imgPC: "slide10.png",
+                imgMB: "slide_m10.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C819677116"
+            },
+            {
+                imgPC: "slide1.png",
+                imgMB: "slide_m1.png",
+                link: "https://www.pchomeec.tw/sites/google"
+            },
+            {
+                imgPC: "slide2.png",
+                imgMB: "slide_m2.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C074699514"
+            },
+            {
+                imgPC: "slide3.png",
+                imgMB: "slide_m3.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C316312473"
+            },
+            {
+                imgPC: "slide4.png",
+                imgMB: "slide_m4.png",
+                link: "https://shopping.pchome.com.tw/activity/campaign/C690787045"
+            },
+            // {
+            //     imgPC: "slide_1025.png",
+            //     imgMB: "slide_m1025.png",
+            //     link: "https://24h.pchome.com.tw/prod/DYAO49-A9006VB5I"
+            // },
+        ];
+        var html_slider = '';
+        for (var i = 0; i < slider.length; i++) {
+            html_slider += '<div class="swiper-slide box2"><a href="' + slider[i]['link'] + '" target="_blank">';
+            html_slider += '<img src="img/gallery/' + slider[i]['imgPC'] + '" class="d-block pc w-95">';
+            html_slider += '<img src="img/gallery/' + slider[i]['imgMB'] + '" class="d-block mb w-100">';
+            html_slider += '</a></div>';
+
+        }
+        $('#main_slider .swiper-wrapper').html(html_slider);
+
+
+
+
+        // ----------------
+        // 商品資訊
+        // ----------------
+        var themePD = new Array();
+        themePD = [
+            {
+                // 第1區商品
+                content: [
+                    {
+                        "name": "Glolux LED燈泡超值組",
+                        "hotline": "22折 售完為止",
+                        "price": "$520",
+                        "note": "",
+                        "hot_price": 111,
+                        "link": "https://24h.pchome.com.tw/prod/DEAX88-1900BXXCT",
+                        "pic": "pm/philips_1.jpg",
+
+                    },
+                    {
+                        "name": "HP 27吋IPS廣視角螢幕",
+                        "hotline": "送HP電競耳麥",
+                        "price": "$6088",
+                        "note": "",
+                        "hot_price": 5999,
+                        "link": "https://24h.pchome.com.tw/prod/DHAGB8-A900BOEQ4",
+                        "pic": "pm/hp_1.jpg",
+
+                    },
+                    {
+                        "name": "HP 24吋IPS窄邊美型螢幕",
+                        "hotline": "限量送HP隨身碟",
+                        "price": "$4888",
+                        "note": "",
+                        "hot_price": 4299,
+                        "link": "https://24h.pchome.com.tw/prod/DHAGBC-1900BY13V",
+                        "pic": "pm/hp_2.jpg",
+
+                    },
+                    {
+                        "name": "Honeywell 10坪用抗敏系列清淨機",
+                        "hotline": "雙11價提前開賣",
+                        "price": "",
+                        "note": "",
+                        "hot_price": 4490,
+                        "link": "https://24h.pchome.com.tw/prod/DMAU00-A900AV2HK",
+                        "pic": "pm/honeywell_1.jpg"
+                    },
+                    {
+                        "name": "伊萊克斯PURE i9.2 機器人",
+                        "hotline": "雙11價提前開賣",
+                        "price": "",
+                        "note": "",
+                        "hot_price": 16888,
+                        "link": "https://24h.pchome.com.tw/prod/DMAX02-A900B2Y2E",
+                        "pic": "pm/purei92.jpg"
+                    },
+                    {
+                        "name": "THERMOS 膳魔師不銹鋼保溫瓶",
+                        "hotline": "62折 限時開賣",
+                        "price": "799",
+                        "note": "",
+                        "hot_price": 499,
+                        "link": "https://24h.pchome.com.tw/prod/DECL01-A9008VAND",
+                        "pic": "pm/thermos.jpg"
+                    },
+                    {
+                        "name": "舒潔 喀什米爾四層抽取衛生紙",
+                        "hotline": "(90抽X6包/串) 限時開賣",
+                        "price": "",
+                        "note": "",
+                        "hot_price": 114,
+                        "link": "https://24h.pchome.com.tw/prod/DAAG6X-A900AVW54",
+                        "pic": "pm/kleenex.jpg"
+                    },
+                    {
+                        "name": "DOD RC400S WiFi行車記錄器",
+                        "hotline": "限量 售完為止",
+                        "price": "6118",
+                        "note": "",
+                        "hot_price": 2911,
+                        "link": "https://24h.pchome.com.tw/prod/DEBB03-A9009GUBN",
+                        "pic": "pm/dod.jpg"
+                    },
+
+
+                ],
+            }
+
+        ];
+
+
+
+
+        var themeBTN = new Array();
+        themeBTN = [
+
+
+
+            {
+                // 先領神券 在參加盛宴
+                content: [
+                    {
+                        "link": "https://shopping.pchome.com.tw/marketing/coupon/v2/couponsend.htm?id=617f8b7733e8eman2",
+                        "pic": "gallery/stamp_card1.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://ecvip.pchome.com.tw/web/pages/couponsave.htm",
+                        "pic": "gallery/stamp_card2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/?fq=/A/169068",
+                        "pic": "gallery/stamp_card3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/?fq=/R/DAAG/coupon",
+                        "pic": "gallery/stamp_card4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DAAB1L",
+                        "pic": "gallery/stamp_card5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DAAO00",
+                        "pic": "gallery/stamp_card6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/marketing/coupon/v2/couponsend.htm?id=61762888081aeman1",
+                        "pic": "gallery/stamp_card7.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DCBF0X",
+                        "pic": "gallery/stamp_card8.png",
+                        "over": false
+                    },
+                    {
+                        "link": "",
+                        "pic": "gallery/stamp_card11.png",
+                        "over": false
+                    },
+                    {
+                        "link": "",
+                        "pic": "gallery/stamp_card9.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/larocheposay",
+                        "pic": "gallery/stamp_card10.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DDCR0B",
+                        "pic": "gallery/stamp_card12.png",
+                        "over": false
+                    }
+                ],
+            },
+            {
+                // 大牌送p幣
+                content: [
+                    {
+                        "link": "https://samsung.pchomeec.tw/sites/samsung",
+                        "pic": "gallery/p_card1.png",
+                        "over": false,
+
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DAAO0C",
+                        "pic": "gallery/p_card2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/brands",
+                        "pic": "gallery/p_card3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://lego.pchomeec.tw/sites/lego",
+                        "pic": "gallery/p_card4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://dyson.pchomeec.tw/sites/dyson",
+                        "pic": "gallery/p_card5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/acer",
+                        "pic": "gallery/p_card6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C255439635",
+                        "pic": "gallery/p_card7.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C926885631",
+                        "pic": "gallery/p_card8.png",
+                        "over": false
+                    },
+
+
+                ],
+            },
+            {
+
+                //40大品牌
+                // 3C王者
+                content: [
+                    {
+                        "link": "https://www.pchomeec.tw/activity/AC94475095",
+                        "pic": "gallery/week_card_W3-10.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/activity/AC76166173",
+                        "pic": "gallery/week_card_W2-9.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C076242879",
+                        "pic": "gallery/week_card_W2-3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C690787045",
+                        "pic": "gallery/week_card_W1-4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/surface",
+                        "pic": "gallery/week_card_W4-1.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C711401674",
+                        "pic": "gallery/week_card_W2-8.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://logitech.pchomeec.tw/sites/logitech",
+                        "pic": "gallery/week_card_W3-6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "",
+                        "pic": "gallery/week_card_W4-2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/acer",
+                        "pic": "gallery/week_card_W3-8.png",
+                        "over": false
+                    },
+                ],
+            },
+            {
+
+                //40大品牌
+                // 榮耀家電
+                content: [
+                    {
+                        "link": "https://dyson.pchomeec.tw/sites/dyson",
+                        "pic": "gallery/week_card_W3-9.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C074699514",
+                        "pic": "gallery/week_card_W1-2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C316312473",
+                        "pic": "gallery/week_card_W1-3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C080720117",
+                        "pic": "gallery/week_card_W1-9.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C819677116",
+                        "pic": "gallery/week_card_W1-10.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C702173217",
+                        "pic": "gallery/week_card_W4-9.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C255439635",
+                        "pic": "gallery/week_card_W4-10.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C926885631",
+                        "pic": "gallery/week_card_W3-2.png",
+                        "over": false
+                    },
+                ],
+            },
+            {
+
+                //40大品牌
+                // 酷玩聖殿
+                content: [
+                    {
+                        "link": "https://apple.pchomeec.tw/cdn/sites/apple",
+                        "pic": "gallery/week_card_W2-1.png",
+                        "over": false
+
+                    },
+                    {
+                        "link": "https://samsung.pchomeec.tw/sites/samsung",
+                        "pic": "gallery/week_card_W2-10.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://android.pchomeec.tw/sites/android",
+                        "pic": "gallery/week_card_W4-8.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/activity/AC73895265",
+                        "pic": "gallery/week_card_W3-7.png",
+                        "over": false
+                    },
+
+                ],
+            },
+            {
+
+                //40大品牌
+                // 優質生活
+                content: [
+                    {
+                        "link": "https://www.pchomeec.tw/cdn/sites/iloom",
+                        "pic": "gallery/week_card_W1-7.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/futurelab",
+                        "pic": "gallery/week_card_W2-6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DEAY0N",
+                        "pic": "gallery/week_card_W3-1.png",
+                        "over": false
+
+                    },
+                    {
+                        "link": "https://lego.pchomeec.tw/sites/lego",
+                        "pic": "gallery/week_card_W4-3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C256837370",
+                        "pic": "gallery/week_card_W2-4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C831135485",
+                        "pic": "gallery/week_card_W3-5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C000193541",
+                        "pic": "gallery/week_card_W2-2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C917276556",
+                        "pic": "gallery/week_card_W3-3.png",
+                        "over": false
+                    },
+                ],
+            },
+            {
+
+                //40大品牌
+                // 質感日用
+                content: [
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C831135485",
+                        "pic": "gallery/week_card_W3-5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C000193541",
+                        "pic": "gallery/week_card_W2-2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C917276556",
+                        "pic": "gallery/week_card_W3-3.png",
+                        "over": false
+                    },
+                ],
+            },
+            {
+
+                //40大品牌
+                // 美味饗宴
+                content: [
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C467629262",
+                        "pic": "gallery/week_card_W1-6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/region/DBBW",
+                        "pic": "gallery/week_card_W2-7.png",
+                        "over": false
+                    },
+
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C118151130",
+                        "pic": "gallery/week_card_W2-5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/brands",
+                        "pic": "gallery/week_card_W4-5-2.png",
+                        "over": false
+                    },
+                ],
+            },
+            {
+
+                //40大品牌
+                // 玩美領航
+                content: [
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C530409425",
+                        "pic": "gallery/week_card_W3-4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/region/DDCX",
+                        "pic": "gallery/week_card_W1-8.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://www.pchomeec.tw/sites/porter",
+                        "pic": "gallery/week_card_W1-5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/region/DDCR",
+                        "pic": "gallery/week_card_W4-5.png",
+                        "over": false
+                    },
+                    // {
+                    //     "link": "https://razer.pchomeec.tw/sites/razer",
+                    //     "pic": "gallery/week_card_W4-4.png",
+                    //     "over": false
+                    // },
+                ],
+            },
+            {
+
+                // 明星商品
+                content: [
+                    {
+                        "link": "https://24h.pchome.com.tw/prod/DYAJCB-A900B3PAD",
+                        "pic": "gallery/start_product1.png",
+                        "over": false
+
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/prod/DDAD8M-A900BD9J8",
+                        "pic": "gallery/start_product2.png",
+                        "over": false
+                    },
+                    {
+                        "link": "",
+                        "pic": "gallery/start_product3.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DABC7L",
+                        "pic": "gallery/start_product4.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/store/DXAXBP",
+                        "pic": "gallery/start_product5.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://24h.pchome.com.tw/prod/DRAB4I-A900BX287",
+                        "pic": "gallery/start_product6.png",
+                        "over": false
+                    },
+                    {
+                        "link": "https://shopping.pchome.com.tw/activity/campaign/C118151130",
+                        "pic": "gallery/start_product7.png",
+                        "over": false
+                    },
+                    {
+                        "link": "",
+                        "pic": "gallery/start_product8.png",
+                        "over": true
+                    },
+
+                ],
+            },
+
+        ];
+
+        function html(dataNum, divID) {
+            var html_themePD = '';
+            for (var i = 0; i < themePD[dataNum].content.length; i++) {
+                // console.log(themePD[dataNum].content[i]);
+                html_themePD += '<li class="col-6 col-md-6 col-lg-3 "><a href="' + themePD[dataNum].content[i]['link'] + '" target="_blank">';
+                html_themePD += '<div class="icon d-flex align-items-end"><img src="img/search.svg" class="d-block"></div><img src="img/' + themePD[dataNum].content[i]['pic'] + '" class="d-block">';
+                html_themePD += '<div class="hotline">' + themePD[dataNum].content[i]['hotline'] + '</div>';
+                html_themePD += '<div class="pd_title">' + themePD[dataNum].content[i]['name'] + '</div>';
+                html_themePD += '<div class="price"><i>' + themePD[dataNum].content[i]['price'] + '</i><small>' + themePD[dataNum].content[i]['note'] + '</small> <small>$</small>' + themePD[dataNum].content[i]['hot_price'] + '</div>';
+                html_themePD += '</a></li>';
+            }
+            $(divID).html(html_themePD);
+        }
+        // 執行function
+        html(0, '#promo_01'); //第1區商品
+        // html(1, '#promo_02'); //第2區商品
+        // html(2, '#promo_03'); //第3區商品
+        // html(3, '#promo_04'); //第4區商品
+        // html(4, '#promo_05'); //第5區商品
+        // html(5, '#promo_06'); //第6區商品
+        // html(6, '#promo_07'); //第7區商品
+        // html(7, '#promo_08'); //第8區商品
+        // html(8, '#promo_09'); //第9區商品
+        // html(9, '#promo_10'); //第10區商品
+
+
+
+
+
+
+
+
+
+
+
+        function htmlBTN(dataNum, divID) {
+            var html_themeBTN = '';
+            // 開關領完
+            var over = '';
+
+            for (var i = 0; i < themeBTN[dataNum].content.length; i++) {
+                if (themeBTN[dataNum].content[i]['over']) {
+                    over = 'over88'
+                }
+                else {
+                    over = '';
+                }
+
+                if (divID == '#themeBTN_03') {
+                    if (themeBTN[dataNum].content[i]['over']) {
+                        over = 'over881'
+                    }
+                    else {
+                        over = '';
+                    }
+                    html_themeBTN += '<li class="mb-4 col-6 col-md-6 col-lg-3 themeBTN ' + over + '"> <a href="' + themeBTN[dataNum].content[i]['link'] + '" target="_blank">';
+                    html_themeBTN += '<div class="fan_card "><img class="fan_logo" src="img/' + themeBTN[dataNum].content[i]['pic'] + '" alt="">';
+                    html_themeBTN += '</div></a>';
+                    html_themeBTN += '</li>';
+
+
+                } else {
+
+                    html_themeBTN += '<li class="mb-4 col-6 col-md-6 col-lg-3 themeBTN ' + over + '"><a href="' + themeBTN[dataNum].content[i]['link'] + '" target="_blank">';
+                    html_themeBTN += '<img src="img/' + themeBTN[dataNum].content[i]['pic'] + '" class="d-block">';
+                    html_themeBTN += '</a></li>';
+                }
+
+                // if (themeBTN[dataNum].content[i]['over']) {
+                //     console.log('我是true');
+                //     $('li').removeClass('themeBTN')
+                // }
+                // else{
+                //     console.log('我是false');
+                // }
+
+            }
+            $(divID).html(html_themeBTN);
+
+        }
+
+
+        htmlBTN(0, '#themeBTN_03'); //先領神卷 在參加盛宴
+        htmlBTN(1, '#themeBTN_04'); //大牌送p幣
+        htmlBTN(2, '#themeBTN_01'); //40大品牌 3C王者
+        htmlBTN(3, '#themeBTN_05'); //40大品牌 榮耀家電
+        htmlBTN(4, '#themeBTN_06'); //40大品牌 酷玩聖殿
+        htmlBTN(5, '#themeBTN_07'); //40大品牌 優質生活
+        htmlBTN(6, '#themeBTN_08'); //40大品牌 質感日用
+        htmlBTN(7, '#themeBTN_09'); //40大品牌 美味饗宴        
+        htmlBTN(8, '#themeBTN_10'); //40大品牌 玩美領航
+        htmlBTN(9, '#themeBTN_11'); //明星商品  
+
+
+
+
+
+    </script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js' integrity='sha512-FOw+bgWRx/Kk1SAVkNO8CiXx9FFP7kFq+hcYWruJRdqjhzB39Yt/CVFgcFIXfTH0+oSZNUMEQNq1XI9+nMAW0Q==' crossorigin='anonymous'></script> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/day.min.js"></script>
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.4.2.1.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/swiper.animate.min.js"></script>
+    <script type="text/javascript" src="js/common1108.js"></script>
+</body>
+
+</html>
